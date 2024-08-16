@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.wns.co.za/Portals/0/Images/HeaderBanner/desktop/1087/53/travel_HD.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+        form {
+            width: 100%;
+            max-width: 300px;
+            padding: 20px;
+            border: 1px solid #eae4e4;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <form id="userForm">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+            <option value="">Select destination</option>
+            <option value="telangana">Telangana</option>
+            <option value="kerala">Kerala</option>
+            <option value="tamilnadu">Tamil Nadu</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const age = document.getElementById('age').value;
+            const place = document.getElementById('destination').value.toLowerCase();
+            let redirectTo = '';
+
+            //conditions
+            if (age >= 1 && age <= 16 && place == 'telangana') {
+                redirectTo = 'page1.html';
+            } else if (age >= 17 && age <= 25 && place == 'telangana') {
+                redirectTo = 'page2.html';
+            } else if (age >= 26 && age <= 35 && place == 'telangana') {
+                redirectTo = 'page3.html';
+            } else if (age >= 36 && age <= 45 && place == 'telangana') {
+                redirectTo = 'page4.html';
+            } else if (age >= 46 && age <= 70 && place == 'telangana') {
+                redirectTo = 'page5.html';
+            } else if (age >= 70 && age <= 100 && place == 'telangana') {
+                redirectTo = 'page6.html';
+            } else if (age >= 1 && age <= 16 && place == 'kerala') {
+                redirectTo = 'pageK1.html';
+            } else if (age >= 17 && age <= 25 && place == 'kerala') {
+                redirectTo = 'pageK2.html';
+            } else if (age >= 26 && age <= 35 && place == 'kerala') {
+                redirectTo = 'pageK3.html';
+            } else if (age >= 36 && age <= 45 && place == 'kerala') {
+                redirectTo = 'pageK4.html';
+            } else if (age >= 46 && age <= 70 && place == 'kerala') {
+                redirectTo = 'pageK5.html';
+            } else if (age >= 70 && age <= 100 && place == 'kerala') {
+                redirectTo = 'pageK6.html';
+            } else if (age >= 1 && age <= 16 && place == 'tamilnadu') {
+                redirectTo = 'pageT1.html';
+            } else if (age >= 17 && age <= 25 && place == 'tamilnadu') {
+                redirectTo = 'pageT2.html';
+            } else if (age >= 26 && age <= 35 && place == 'tamilnadu') {
+                redirectTo = 'pageT3.html';
+            } else if (age >= 36 && age <= 45 && place == 'tamilnadu') {
+                redirectTo = 'pageT4.html';
+            } else if (age >= 46 && age <= 70 && place == 'tamilnadu') {
+                redirectTo = 'pageT5.html';
+            } else if (age >= 70 && age <= 100 && place == 'tamilnadu') {
+                redirectTo = 'pageT6.html';
+            } else {
+                redirectTo = 'default.html';
+            }
+
+            // Redirect to the specified page
+            window.location.href = redirectTo;
+        });
+    </script>
+</body>
+</html>
